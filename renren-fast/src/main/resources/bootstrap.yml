@@ -1,0 +1,15 @@
+spring:
+  # 1. 服务名（必需，Nacos识别服务的唯一标识）
+  application:
+    name: renren-fast
+  # 2. 声明Nacos配置源（必需，解决Config Data检查）
+  config:
+    import: nacos:127.0.0.1:8848  # 本地Nacos默认地址，直接写死更简单
+  # 3. Nacos核心连接配置（注册+配置中心共用地址，用默认namespace/group）
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848  # 注册中心地址
+      config:
+        server-addr: 127.0.0.1:8848  # 配置中心地址（与注册中心一致）
+        file-extension: yml  # 配置文件格式（默认找 renren-fast.yml）
