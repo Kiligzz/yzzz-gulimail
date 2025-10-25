@@ -20,12 +20,19 @@ spring:
                 - Path=/api/product/**
               filters:
                 - RewritePath=/api/?(?<segment>.*),/$\{segment}
+            - id: third_part_route
+              uri: lb://gulimall-third-part
+              predicates:
+                - Path=/api/thirdpart/**
+              filters:
+                - RewritePath=/api/thirdpart/?(?<segment>.*),/$\{segment}
             - id: admin_route
               uri: lb://renren-fast
               predicates:
                 - Path=/api/**
               filters:
                 - RewritePath=/api/?(?<segment>.*),/renren-fast/$\{segment}
+
           httpclient:
             response-timeout: 30s
             connect-timeout: 5

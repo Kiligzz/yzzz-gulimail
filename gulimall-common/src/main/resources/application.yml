@@ -1,0 +1,7 @@
+# 这里的配置只能在common中生效
+aliyun:
+  oss:
+    access-key-id: LTAI5tRixEECBowWSEQxarct
+    access-key-secret: ofqMAmHhQzohxYQRNiZOSzsGqKPVil
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    bucket-name: gulimall-yzzz

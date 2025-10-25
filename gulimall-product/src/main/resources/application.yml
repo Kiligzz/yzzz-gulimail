@@ -26,3 +26,11 @@ server:
 logging:
   level:
     com.yzzz.gulimall: debug
+
+# 阿里云 OSS 配置
+aliyun:
+  oss:
+    access-key-id: LTAI5tRixEECBowWSEQxarct
+    access-key-secret: ofqMAmHhQzohxYQRNiZOSzsGqKPVil
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    bucket-name: gulimall-yzzz
