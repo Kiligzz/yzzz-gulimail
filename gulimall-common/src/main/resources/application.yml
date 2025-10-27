@@ -5,3 +5,8 @@ aliyun:
     access-key-secret: ofqMAmHhQzohxYQRNiZOSzsGqKPVil
     endpoint: oss-cn-hangzhou.aliyuncs.com
     bucket-name: gulimall-yzzz
+
+spring:
+  messages:
+    encoding: UTF-8
+    basename: ValidationMessages

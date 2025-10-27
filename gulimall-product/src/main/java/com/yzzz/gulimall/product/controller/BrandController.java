@@ -2,12 +2,15 @@ package com.yzzz.gulimall.product.controller;
 
 import com.yzzz.common.utils.PageUtils;
 import com.yzzz.common.utils.R;
+import com.yzzz.common.valid.AddGroup;
+import com.yzzz.common.valid.UpdateGroup;
+import com.yzzz.common.valid.UpdateStatusGroup;
 import com.yzzz.gulimall.product.entity.BrandEntity;
 import com.yzzz.gulimall.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -53,7 +56,7 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@Valid @RequestBody BrandEntity brand/**, BindingResult result*/){
+    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand/**, BindingResult result*/){
         // 变为统一处理异常
 //        System.out.println("===============result 如下：=====================");
 //        System.out.println(result);
@@ -75,7 +78,7 @@ public class BrandController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody BrandEntity brand){
+    public R update(@Validated({UpdateGroup.class}) @RequestBody BrandEntity brand){
 		brandService.updateById(brand);
 
         return R.ok();
@@ -85,7 +88,7 @@ public class BrandController {
      * 修改状态
      */
     @RequestMapping("/update/status")
-    public R updateStatus(@RequestBody BrandEntity brand){
+    public R updateStatus(@Validated({UpdateStatusGroup.class}) @RequestBody BrandEntity brand){
         brandService.updateById(brand);
 
         return R.ok();
